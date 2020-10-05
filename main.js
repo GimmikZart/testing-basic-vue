@@ -74,11 +74,21 @@ new Vue ({
 
 var Condizionale = Vue.component("Condizionale",{
     template: `
-    <p> {{testo}} </p>
+    <template>
+        <div v-if="isAbilited"> 
+            <h1>Il booleano è true</h1>
+        </div>
+        <div v-else> 
+            <h1>Il booleano è false</h1>
+        </div>
+
+    </template>
         
     `, //template html che prenderà il posto del tag 
     data() {
-        return {testo: "La macchina va forte."} //sostituzione del pezzo fra graffe
+        return {
+            isAbilited: true,
+        } //sostituzione del pezzo fra graffe
     }
 });
 
